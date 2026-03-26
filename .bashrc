@@ -1,11 +1,11 @@
-# The follwiling line hids the working directory in terminal 
+# The follwiling line hids the working directory in terminal
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
 
 
-source ./spack/share/spack/setup-env.sh
+#source ./spack/share/spack/setup-env.sh
 export LD_LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:$LD_LIBRARY_PATH
 
 export PATH=/usr/local/cuda-12.5/bin:$PATH
@@ -13,6 +13,8 @@ export LD_LIBRARY_PATH=/usr/local/cuda-12.5/lib64:$LD_LIBRARY_PATH
 export HDF5_USE_FILE_LOCKING=FALSE
 
 
+export PATH=~/apps/paraview-5.13.2/bin:$PATH
+export PATH=~/opt/paraview-5.13.2/bin:$PATH
 
 
 
@@ -142,9 +144,13 @@ alias sg='singularity'
 #export PS1='\u@\h1$> '
 
 #export PS1='Dav@Blackwolf1-> '
- 
+
 source ~/spack/share/spack/setup-env.sh
 export PS1='DavDam->'
 export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
 export PATH="/home/davood/.local/bin:$PATH"
+export PATH="$HOME/.fzf/bin:$PATH"
 
+
+alias qr='pkill -9 run.sh'
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
